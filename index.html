@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+</head>
+<body>
+  <div id="" class= "quiz-header">
+    <header>
+      <section id="score" class="high-scores">View high scores</section>
+      <section id="time" class="time">Time:0</section>
+    </header>
+  </div>
+    <div id="start-quiz" class="start-quiz-container">
+      <h1 >
+        Coding Quiz Challenge
+      </h1>
+      <div class="quiz-body">
+        <p>
+          Try to answer the following code-related questions within the time limit.<br> 
+          Keep in mind that incorrect answers will penalize your score/time <br>
+          by ten seconds!
+        </p>
+        <div class="quiz-footer">
+          <button  id="submit" class="btn hover" onclick="startQuiz()">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-container" class="quiz-container">
+      <div id="quiz-questions" class="question-wrapper"> 
+        <!-- <h1 class="question">
+          This is where I will put the question and it may have a lot of words.
+        </h1> -->
+        <div id="quiz-answers" class="answer-wrapper">
+          <!-- <button  id="submit" class="answer-btn hover">this is an answer option</button>
+          <button  id="submit" class="answer-btn hover">Submit</button>
+          <button  id="submit" class="answer-btn hover">Submit</button>
+          <button  id="submit" class="answer-btn hover">Submit</button> -->
+        </div>
+      </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

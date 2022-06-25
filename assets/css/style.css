@@ -1,0 +1,128 @@
+.start-quiz-container {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.quiz-container {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  padding-top: 0px;
+  display: inline-flex;
+}
+
+.high-scores {
+  text-align: left;
+  position: absolute;
+  left: 0;
+}
+
+.time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.quiz-header {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: white;
+  height: 2px;
+  text-align: center;
+}
+
+
+.quiz-body {
+  min-height: 100px;
+  text-align: center;
+}
+
+.quiz-footer {
+  text-align: center;
+}
+
+.btn, .answer-btn {
+  border: none;
+  background-color:rgb(53, 28, 117);
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 34px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn .hover {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+    background: pink;
+    padding: 8px 15px;
+    color: var(--primaryColor);
+    text-decoration: underline;
+}
+
+.hover:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primaryColor);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.hover:hover, .hover:focus, .hover:active {
+  color: white;
+  text-decoration: none;
+  background-color: rgb(189, 96, 231);
+}
+
+.hover:hover:before, .hover:focus:before, .hover:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+.question-wrapper {
+  display: flex;
+  flex-flow: column;
+  margin: 25px auto;
+  width: 50%;
+  align-content: flex-start;
+  text-align: left;
+}
+
+.answer-wrapper {
+  width: fit-content;
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+}
+
+.answer-btn {
+  margin: 0 0 10px 0;
+  text-align: left;
+}

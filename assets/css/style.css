@@ -124,3 +124,9 @@ header {
   margin: 0 0 10px 0;
   text-align: left;
 }
+
+.notification {
+  border-top: 3px solid rgb(184, 182, 182);
+  padding-top: 15px;
+  color:rgb(184, 182, 182);
+}

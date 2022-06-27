@@ -16,6 +16,7 @@ header {
   padding: 20px;
   padding-top: 0px;
   display: inline-flex;
+
 }
 
 .high-scores {
@@ -32,12 +33,9 @@ header {
 }
 
 .quiz-header {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: white;
-  height: 2px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 

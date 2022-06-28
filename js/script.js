@@ -51,6 +51,7 @@ var questions = [
 var questionsIndex = 0;
 var questionHeading = "";
 var quizAnswers = "";
+var notificationHeading = "";
 
 
 function startQuiz() {
@@ -75,12 +76,14 @@ function startQuiz() {
     quizQuestions.style.display = "flex";
   }
 
+  // creates div for quizAnswers to go in
   quizAnswers = document.createElement("div");
   quizAnswers.className = "answer-wrapper";
   quizAnswers.setAttribute("id","quiz-answers");
-  
+  // creates h1 that holds the question
   questionHeading = document.createElement("h1");
   questionHeading.className = "question";
+  // attaches the h1 and the div to the quizQuestions div
   quizQuestions.appendChild(questionHeading);
   quizQuestions.appendChild(quizAnswers);
 
@@ -93,6 +96,7 @@ function subtractSeconds() {
 
 // builds question box on each page
 function questionBuilder() {
+  //clears out the children of the previous questions
   document.getElementById("quiz-answers").innerHTML = "";
   questionHeading.innerHTML = questions[questionsIndex].question;
 // this for loop is for the answer array for each question
@@ -111,12 +115,18 @@ function questionBuilder() {
 // needs to pull up the next question (call questionBuilder above)
 // display if previous question was right or wrong 
 // if answer is wrong call subtractSeconds
+// this.id is the id of the button that was clicked--changes each time
 function checkQuestion() {
   var notification = "CORRECT!";
   var userAnswer = document.getElementById(this.id).innerText;
-  var answer = questions[questionsIndex - 1].answer;
+  var previousQuestionsIndex = questionsIndex - 1;
+  var answer = questions[previousQuestionsIndex].answer;
   console.log("userAnswer is ", userAnswer);
   console.log("answer is ", answer);
+
+  notificationHeading = document.createElement("h1");
+  notificationHeading.className = "notification";
+  notificationHeading.setAttribute("id", "notification");
 
   var isEqual = userAnswer === answer;
   console.log(isEqual);
@@ -125,15 +135,12 @@ function checkQuestion() {
     notification = "INCORRECT!"
   }
 
+  
+
   document.getElementById("notification").innerText = notification;
 
   // alert(this.id);// how to check which button id called this function
   questionBuilder();
-
-
-  
-
-
 }
 
 

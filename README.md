@@ -4,7 +4,7 @@
 
 Link to github pages
 
-https://jessicam04.github.io/coding-quiz/
+https://github.com/JessicaM04/coding-quiz
 
 Link to deployed site
 

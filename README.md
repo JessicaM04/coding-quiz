@@ -2,11 +2,11 @@
 
 * This program will test your coding knowledge!  Do not take too long on the quiz as you only have 75 seconds!  Each wrong answer will deduct 10 seconds from your time.  Your remaining time at the end of the quiz is your score! See if you can beat your previous high score with the score tracker.  If you are not satisfied with your results just select back at the end of the quiz to begin again! 
 
-Link to github pages
+Link to github:
 
 https://github.com/JessicaM04/coding-quiz
 
-Link to deployed site
+Link to deployed site:
 
 https://jessicam04.github.io/coding-quiz/
 

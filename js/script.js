@@ -40,7 +40,7 @@ var questions = [
   {
   	question: "A very useful tool used during development and debugging for printing content to the debugger is:",
     answers: [
-      "1. JavaScripty",
+      "1. JavaScript",
       "2. terminal/bash",
       "3. for loops",
       "4. console.log"
@@ -52,13 +52,16 @@ var questionsIndex = 0;
 var questionHeading = "";
 var quizAnswers = "";
 var notificationHeading = "";
+var endGame = document.getElementById("end-game");
+var highScores = [];
+var secondsCounter;
 
 
 function startQuiz() {
 
   var timerElement = document.getElementById('timer');
   timerElement.innerHTML = "Time: " + seconds;
-  var secondsCounter = setInterval(function(){
+  secondsCounter = setInterval(function(){
     seconds = seconds - 1;
     timerElement.innerHTML = "Time: " + seconds;
     if (seconds === 0){
@@ -121,28 +124,78 @@ function checkQuestion() {
   var userAnswer = document.getElementById(this.id).innerText;
   var previousQuestionsIndex = questionsIndex - 1;
   var answer = questions[previousQuestionsIndex].answer;
-  console.log("userAnswer is ", userAnswer);
-  console.log("answer is ", answer);
 
   notificationHeading = document.createElement("h1");
   notificationHeading.className = "notification";
   notificationHeading.setAttribute("id", "notification");
 
   var isEqual = userAnswer === answer;
-  console.log(isEqual);
   if (!isEqual) {
     subtractSeconds();
     notification = "INCORRECT!"
   }
 
-  
-
   document.getElementById("notification").innerText = notification;
-
+  var iHaveMoreQuestions = questionsIndex < questions.length;
   // alert(this.id);// how to check which button id called this function
-  questionBuilder();
+  if (iHaveMoreQuestions) {
+    questionBuilder();  
+  } else {
+    clearInterval(secondsCounter);
+    // go to enter score page
+    document.querySelector(".quiz-container").style.display="none";
+    endGame.classList.remove("hide");
+    var highScore = document.getElementById("high-score");
+    highScore.innerHTML = "Your high score is " + seconds;
+  }
 }
 
+function submitInitials() {
+  // highScoreList.classList.remove("hide");
+  var inputInitials = document.getElementById("inputInitials").value;
+  var scoreInitials = {
+    initials: inputInitials, 
+    score: seconds
+  };
+  console.log(scoreInitials);
+// onclick of submit reroute to high scores page
+  highScores.push(scoreInitials);
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+  scoreTracker();
+}
+
+function goBack() {
+  startQuiz();
+  highScoreList.classList.remove("hide");
+}
+
+function clearHighScores() {
+  localStorage.clear();
+  document.getElementById("score-container").innerHTML = "";
+
+}
+
+function scoreTracker() {
+  var endGame = document.getElementById("end-game");
+  endGame.classList.add("hide");
+  var scoreTracker = document.getElementById("scoreTracker");
+  scoreTracker.classList.remove("hide");
+  var scoreList = localStorage.getItem("highScores", highScores);
+  var scoreListJSON = JSON.parse(scoreList);
+  console.log("scoreList is: ", scoreList[0]);
+  console.log(typeof scoreList);
+  console.log(scoreListJSON[0]);
+  var scoreContainer = document.getElementById("score-container");
+
+
+  for ( var i = 0; i < scoreListJSON.length; i++ ) {
+    var score = document.createElement("div");
+    score.className = "score-tracker";
+    score.innerHTML = (i + 1) + ". " + scoreListJSON[i].initials + " - " + scoreListJSON[i].score;
+    scoreContainer.appendChild(score);
+  }
+}
 
 
 

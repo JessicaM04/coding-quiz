@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Quiz</title>
-  <link rel="stylesheet" href="./assets/css/style.css"/>
-</head>
-<body>
-  <div id="" class= "quiz-header">
-    <header>
-      <section id="score" class="high-scores">View high scores</section>
-    </header>
-    <h3 id="timer" class="time">Time:0</h3>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+  </head>
+  <body>
+    <div id="" class= "quiz-header">
+      <header>
+        <button id="view-scores" class="high-scores" onclick="scoreTracker()">View high scores</button>
+      </header>
+      <h3 id="timer" class="time">Time:0</h3>
+    </div>
     <div id="start-quiz" class="start-quiz-container">
       <h1 >
         Coding Quiz Challenge
@@ -41,10 +41,27 @@
           <button  id="submit" class="answer-btn hover">Submit</button>
           <button  id="submit" class="answer-btn hover">Submit</button>
         </div> -->
-        <!-- <h1 id="notification" class="notification">Correct!</h1> -->
       </div>
-  </div>
-
-  <script src="./js/script.js"></script>
-</body>
+      <h1 id="notification" class="notification"></h1>
+    </div>
+    <div id="end-game" class="hide">
+      <h1>All Done!</h1>
+      <h1 id="high-score"></h1>
+      <div>
+        <h1>Enter Initials Here!</h1>
+        <input id="inputInitials"/>
+        <button id="submit" class="answer-btn hover" onclick="submitInitials()">Submit</button>
+      </div>
+    </div>
+    <div id="scoreTracker" class="hide">
+      <h1>High Scores</h1>
+      <div id="score-container">
+      </div>
+      <button id="go-back" class="answer-btn hover" onclick="goBack()">Go Back</button>
+      <button id="clear-high-scores" class="answer-btn hover" onclick="clearHighScores()">Clear High Scores</button>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
 </html>
+  
+  

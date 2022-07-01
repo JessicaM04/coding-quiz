@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+  </head>
+  <body>
+    <div id="" class= "quiz-header">
+      <header>
+        <button id="view-scores" class="high-scores" onclick="scoreTracker()">View high scores</button>
+      </header>
+      <h3 id="timer" class="time">Time:0</h3>
+    </div>
+    <div id="start-quiz" class="start-quiz-container">
+      <h1 >
+        Coding Quiz Challenge
+      </h1>
+      <div class="quiz-body">
+        <p>
+          Try to answer the following code-related questions within the time limit.<br> 
+          Keep in mind that incorrect answers will penalize your score/time <br>
+          by ten seconds!
+        </p>
+        <div class="quiz-footer">
+          <button  id="submit" class="btn hover" onclick="startQuiz()">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-container" class="quiz-container">
+      <div id="quiz-questions" class="question-wrapper"> 
+        <!-- <h1 class="question">
+          This is where I will put the question and it may have a lot of words.
+        </h1> -->
+        <!-- <div id="quiz-answers" class="answer-wrapper">
+          <button  id="submit" class="answer-btn hover">this is an answer option</button>
+          <button  id="submit" class="answer-btn hover">Submit</button>
+          <button  id="submit" class="answer-btn hover">Submit</button>
+          <button  id="submit" class="answer-btn hover">Submit</button>
+        </div> -->
+      </div>
+      <h1 id="notification" class="notification"></h1>
+    </div>
+    <div id="end-game" class="hide">
+      <h1>All Done!</h1>
+      <h1 id="high-score"></h1>
+      <div>
+        <h1>Enter Initials Here!</h1>
+        <input id="inputInitials"/>
+        <button id="submit" class="answer-btn hover" onclick="submitInitials()">Submit</button>
+      </div>
+    </div>
+    <div id="scoreTracker" class="hide">
+      <h1>High Scores</h1>
+      <div id="score-container">
+      </div>
+      <button id="go-back" class="answer-btn hover" onclick="goBack()">Go Back</button>
+      <button id="clear-high-scores" class="answer-btn hover" onclick="clearHighScores()">Clear High Scores</button>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
+  
+  
